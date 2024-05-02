@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://dcjpqc15ovb02"]
+
+[ext_resource type="Script" path="res://Gracz.gd" id="1_x6xr0"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_7e3aq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_md8v1"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_8gfm2"]
+sky_material = SubResource("ProceduralSkyMaterial_md8v1")
+
+[sub_resource type="Environment" id="Environment_tunk0"]
+background_mode = 2
+sky = SubResource("Sky_8gfm2")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnd3l"]
+albedo_color = Color(0.526669, 0.570381, 0.551913, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fkmxx"]
+size = Vector2(20, 20)
+
+[sub_resource type="HeightMapShape3D" id="HeightMapShape3D_d1dv0"]
+map_width = 21
+map_depth = 21
+map_data = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6x0jr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_joje2"]
+albedo_color = Color(4.81308e-06, 0.624274, 0.0534812, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_14p8y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwi16"]
+albedo_color = Color(0.87092, 0.186829, 0.470986, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_b5uxo"]
+
+[node name="Swiat" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tunk0")
+
+[node name="Teren" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_nnd3l")
+mesh = SubResource("PlaneMesh_fkmxx")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Teren"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teren/StaticBody3D"]
+shape = SubResource("HeightMapShape3D_d1dv0")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.977287, 0.211922, 0, -0.211922, 0.977287, 0, 1.97076, 4.53473)
+
+[node name="Gracz" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07215, 0)
+script = ExtResource("1_x6xr0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gracz"]
+shape = SubResource("CapsuleShape3D_6x0jr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Gracz"]
+material_override = SubResource("StandardMaterial3D_joje2")
+mesh = SubResource("CapsuleMesh_14p8y")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Gracz"]
+transform = Transform3D(-1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0, 0.3, 0, 0.63905, -0.35767)
+material_override = SubResource("StandardMaterial3D_nwi16")
+mesh = SubResource("CapsuleMesh_b5uxo")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="Gracz"]
+transform = Transform3D(1, 0, 0, 0, 0.961741, 0.273959, 0, -0.273959, 0.961741, 0, 1.43347, 2.28885)
+current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Virtual Joystick" parent="CanvasLayer" instance=ExtResource("2_7e3aq")]
+offset_left = -18.0
+offset_top = -280.0
+offset_right = 282.0
+offset_bottom = 20.0
+
+[node name="Virtual Joystick2" parent="CanvasLayer" instance=ExtResource("2_7e3aq")]
+offset_left = 891.0
+offset_top = -282.0
+offset_right = 1191.0
+offset_bottom = 18.0

@@ -118,13 +118,13 @@ action_right = "lewo"
 action_up = "gora"
 action_down = "dol"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Box" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 6, 0, 0, 0, 1, 2.999, 3, 0)
 mesh = SubResource("BoxMesh_eli4b")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Box"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/StaticBody3D"]
 shape = SubResource("BoxShape3D_n0do1")
 
 [node name="Lampa" type="StaticBody3D" parent="."]

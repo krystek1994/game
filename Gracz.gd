@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@onready var spring: Node3D = $spring
 
 const SPEED : float = 5.0
 const JUMP_VELOCITY : float = 4.5
@@ -29,7 +30,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
-	
-
+	var input_obrot := Input.get_vector("lewo", "prawo", "gora", "dol")
+	rotate_y( input_obrot.x * delta)
+	spring.rotate_x(input_obrot.y * delta )
 
 	move_and_slide()

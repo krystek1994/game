@@ -78,7 +78,9 @@ material_override = SubResource("StandardMaterial3D_nwi16")
 mesh = SubResource("CapsuleMesh_b5uxo")
 skeleton = NodePath("../..")
 
-[node name="Camera3D" type="Camera3D" parent="Gracz"]
+[node name="spring" type="Node3D" parent="Gracz"]
+
+[node name="Camera3D" type="Camera3D" parent="Gracz/spring"]
 transform = Transform3D(1, 0, 0, 0, 0.961741, 0.273959, 0, -0.273959, 0.961741, 0, 1.43347, 2.28885)
 current = true
 
@@ -95,3 +97,7 @@ offset_left = 891.0
 offset_top = -282.0
 offset_right = 1191.0
 offset_bottom = 18.0
+action_left = "lewo"
+action_right = "prawo"
+action_up = "gora"
+action_down = "dol"

@@ -1,8 +1,9 @@
+OmniLight3D
+CollisionShape3D
+MeshInstance3D
+StaticBody3D
 Node3D
 VirtualJoystick
 CanvasLayer
 Camera3D
-MeshInstance3D
-CollisionShape3D
 CharacterBody3D
-StaticBody3D

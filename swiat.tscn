@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dcjpqc15ovb02"]
+[gd_scene load_steps=21 format=3 uid="uid://dcjpqc15ovb02"]
 
 [ext_resource type="Script" path="res://Gracz.gd" id="1_x6xr0"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_7e3aq"]
+[ext_resource type="Material" uid="uid://bcyq3wfp5a8fp" path="res://zasoby/black_material_lamp.tres" id="3_tvp46"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_md8v1"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -38,6 +39,21 @@ albedo_color = Color(4.81308e-06, 0.624274, 0.0534812, 1)
 albedo_color = Color(0.87092, 0.186829, 0.470986, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_b5uxo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyolf"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eli4b"]
+material = SubResource("StandardMaterial3D_hyolf")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n0do1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_26dwj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mi1gm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wlvmj"]
+size = Vector3(1, 2.20422, 1)
 
 [node name="Swiat" type="Node3D"]
 
@@ -86,18 +102,54 @@ current = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Virtual Joystick" parent="CanvasLayer" instance=ExtResource("2_7e3aq")]
+[node name="lewy" parent="CanvasLayer" instance=ExtResource("2_7e3aq")]
 offset_left = -18.0
 offset_top = -280.0
 offset_right = 282.0
 offset_bottom = 20.0
 
-[node name="Virtual Joystick2" parent="CanvasLayer" instance=ExtResource("2_7e3aq")]
+[node name="prawy" parent="CanvasLayer" instance=ExtResource("2_7e3aq")]
 offset_left = 891.0
 offset_top = -282.0
 offset_right = 1191.0
 offset_bottom = 18.0
-action_left = "lewo"
-action_right = "prawo"
+action_left = "prawo"
+action_right = "lewo"
 action_up = "gora"
 action_down = "dol"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 6, 0, 0, 0, 1, 2.999, 3, 0)
+mesh = SubResource("BoxMesh_eli4b")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_n0do1")
+
+[node name="Lampa" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.511, 0, 1.851)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lampa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = ExtResource("3_tvp46")
+mesh = SubResource("BoxMesh_26dwj")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lampa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+material_override = ExtResource("3_tvp46")
+mesh = SubResource("BoxMesh_mi1gm")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lampa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10614, 0)
+shape = SubResource("BoxShape3D_wlvmj")
+metadata/_edit_lock_ = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lampa"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11335, 0.062151)
+light_color = Color(0.431373, 0.364706, 0.25098, 1)
+light_energy = 5.0
+omni_attenuation = 3.13833
+metadata/_edit_lock_ = true

@@ -1,3 +1,8 @@
+VisibleOnScreenNotifier3D
+Label
+VBoxContainer
+Panel
+PanelContainer
 OmniLight3D
 CollisionShape3D
 MeshInstance3D

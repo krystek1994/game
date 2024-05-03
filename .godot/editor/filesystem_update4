@@ -1,2 +1,5 @@
 res://swiat.tscn
 res://zasoby/black_material_lamp.tres
+res://gui.gd
+res://addons/virtual_joystick/virtual_joystick_plugin.gd
+res://Gracz.gd

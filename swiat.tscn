@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dcjpqc15ovb02"]
+[gd_scene load_steps=27 format=3 uid="uid://dcjpqc15ovb02"]
 
 [ext_resource type="Script" path="res://Gracz.gd" id="1_x6xr0"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_7e3aq"]
@@ -58,6 +58,13 @@ material = SubResource("StandardMaterial3D_hyolf")
 [sub_resource type="BoxShape3D" id="BoxShape3D_wlvmj"]
 size = Vector3(1, 2.20422, 1)
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_f6bi4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bhlbj"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qgm1f"]
+viewport_path = NodePath("SubViewport")
+
 [node name="Swiat" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -84,7 +91,7 @@ shape = SubResource("HeightMapShape3D_d1dv0")
 process_thread_group = 1
 process_thread_group_order = 0
 process_thread_messages = 0
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07215, 0)
+transform = Transform3D(-0.983757, 0, 0.179506, 0, 1, 0, -0.179506, 0, -0.983757, 0, 1.07215, -4.13452)
 script = ExtResource("1_x6xr0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Gracz"]
@@ -168,7 +175,7 @@ mesh = SubResource("BoxMesh_eli4b")
 shape = SubResource("BoxShape3D_n0do1")
 
 [node name="Box2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.12132, 4.24264, 2.26267e-08, 0.549038, 1.09808, -0.965926, -2.04904, -4.09808, -0.258819, -7.63499, -0.0331018, 5.93967)
+transform = Transform3D(-2.12132, 4.24264, 1.64666e-08, 1.67685, 3.35371, -0.612493, -1.2993, -2.59859, -0.790476, -7.63499, 0.524397, 5.93967)
 mesh = SubResource("BoxMesh_bgcsb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Box2"]
@@ -211,3 +218,21 @@ light_color = Color(0.431373, 0.364706, 0.25098, 1)
 light_energy = 5.0
 omni_attenuation = 3.13833
 metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42966, 1.7418, 2.4933)
+mesh = SubResource("CapsuleMesh_f6bi4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("CapsuleShape3D_bhlbj")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-0.231374, 0, 0.972865, 0, 1, 0, -0.972865, 0, -0.231374, -9.58159, 2.23101, 0)
+texture = SubResource("ViewportTexture_qgm1f")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(-0.59318, 0, -0.80507, 0, 1, 0, 0.80507, 0, -0.59318, -5.44052, 3.03229, -0.975362)

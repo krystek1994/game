@@ -30,8 +30,8 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	var input_obrot := Input.get_vector("lewo", "prawo", "gora", "dol")
-	var rotacja := input_obrot.y * delta
-	var kamp = clampf( rotation.y, deg_to_rad( -25 ), deg_to_rad( 75 ) )
+	#var rotacja := input_obrot.y * delta
+	#var kamp = clampf( rotation.y, deg_to_rad( -25 ), deg_to_rad( 75 ) )
 	rotate_y( input_obrot.x * delta )
 	spring.rotate_x( input_obrot.y * delta )
 

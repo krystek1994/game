@@ -1,5 +1,6 @@
-VisibleOnScreenNotifier3D
 Label
+Window
+VisibleOnScreenNotifier3D
 VBoxContainer
 Panel
 PanelContainer
@@ -11,4 +12,3 @@ Node3D
 VirtualJoystick
 CanvasLayer
 Camera3D
-CharacterBody3D

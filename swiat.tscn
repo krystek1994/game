@@ -13,7 +13,6 @@ sky_material = SubResource("ProceduralSkyMaterial_md8v1")
 [sub_resource type="Environment" id="Environment_tunk0"]
 background_mode = 2
 sky = SubResource("Sky_8gfm2")
-glow_enabled = true
 fog_light_color = Color(0.866914, 0.385812, 0.129684, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnd3l"]
@@ -69,6 +68,9 @@ shadow_enabled = true
 environment = SubResource("Environment_tunk0")
 
 [node name="Teren" type="MeshInstance3D" parent="."]
+process_thread_group = 2
+process_thread_group_order = 1
+process_thread_messages = 3
 material_override = SubResource("StandardMaterial3D_nnd3l")
 mesh = SubResource("PlaneMesh_fkmxx")
 metadata/_edit_lock_ = true
@@ -79,6 +81,9 @@ metadata/_edit_lock_ = true
 shape = SubResource("HeightMapShape3D_d1dv0")
 
 [node name="Gracz" type="CharacterBody3D" parent="."]
+process_thread_group = 1
+process_thread_group_order = 0
+process_thread_messages = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07215, 0)
 script = ExtResource("1_x6xr0")
 
@@ -103,6 +108,9 @@ transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0,
 current = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_thread_group = 1
+process_thread_group_order = 0
+process_thread_messages = 2
 script = ExtResource("2_o0hq7")
 
 [node name="lewy" parent="CanvasLayer" instance=ExtResource("2_7e3aq")]
@@ -203,7 +211,3 @@ light_color = Color(0.431373, 0.364706, 0.25098, 1)
 light_energy = 5.0
 omni_attenuation = 3.13833
 metadata/_edit_lock_ = true
-
-[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7456, 0, -33.4548)
-aabb = AABB(-1, -1, -1, 60, 5, 60)

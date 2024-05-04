@@ -8,7 +8,6 @@ const JUMP_VELOCITY : float = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -29,9 +28,14 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-	
+
 	var input_obrot := Input.get_vector("lewo", "prawo", "gora", "dol")
-	rotate_y( input_obrot.x * delta)
-	spring.rotate_x(input_obrot.y * delta )
+	var rotacja := input_obrot.y * delta
+	var kamp = clampf( rotation.y, deg_to_rad( -25 ), deg_to_rad( 75 ) )
+	rotate_y( input_obrot.x * delta )
+	spring.rotate_x( input_obrot.y * delta )
 
 	move_and_slide()
+
+func _input(_event: InputEvent) -> void:
+	pass

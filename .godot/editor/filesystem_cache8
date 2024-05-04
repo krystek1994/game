@@ -1,11 +1,12 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1714810621
-export_presets.cfg::TextFile::-1::1714728585::0::1::::<><>::
-Gracz.gd::GDScript::-1::1714733940::0::1::::<>CharacterBody3D<>::
-gui.gd::GDScript::-1::1714734860::0::1::::<>CanvasLayer<>::
+::res://::1714834955
+export_presets.cfg::TextFile::-1::1714827190::0::1::::<><>::
+Gracz.gd::GDScript::-1::1714826674::0::1::::<>CharacterBody3D<>::
+gui.gd::GDScript::-1::1714812759::0::1::::<>CanvasLayer<>::
 icon.svg::CompressedTexture2D::2635648488030693419::1714728585::1714728585::1::::<><>::
 my_loop.gd::GDScript::-1::1714728585::0::1::::CustomMainLoop<>MainLoop<>::
-swiat.tscn::PackedScene::7319158612330095161::1714735349::0::1::::<><>::res://Gracz.gd<>uid://dmr0fcamx7t56::::res://addons/virtual_joystick/virtual_joystick_scene.tscn<>res://gui.gd<>uid://bcyq3wfp5a8fp::::res://zasoby/black_material_lamp.tres
+README.md::TextFile::-1::1714811133::0::1::::<><>::
+swiat.tscn::PackedScene::7319158612330095161::1714834948::0::1::::<><>::res://Gracz.gd<>uid://dmr0fcamx7t56::::res://addons/virtual_joystick/virtual_joystick_scene.tscn<>res://gui.gd<>uid://bcyq3wfp5a8fp::::res://zasoby/black_material_lamp.tres
 ::res://addons/::1714728585
 ::res://addons/virtual_joystick/::1714733336
 plugin.cfg::TextFile::-1::1714728585::0::1::::<><>::
@@ -27,5 +28,6 @@ test.tscn::PackedScene::3566301953465693758::1714728585::0::1::::<><>::uid://dmr
 joystick_base_outline.png::CompressedTexture2D::3288008411285325467::1714728585::1714728585::1::::<><>::
 joystick_tip.png::CompressedTexture2D::3132432681801126628::1714728585::1714728585::1::::<><>::
 joystick_tip_arrows.png::CompressedTexture2D::8548255698028078709::1714728585::1714728585::1::::<><>::
-::res://zasoby/::1714729899
-black_material_lamp.tres::StandardMaterial3D::2577366075139585981::1714729899::0::1::::<><>::
+::res://bin/::1714810793
+::res://zasoby/::1714834948
+black_material_lamp.tres::StandardMaterial3D::2577366075139585981::1714834948::0::1::::<><>::
